@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import { Actions } from 'react-native-router-flux';
+import xgpush from 'react-native-xgpush';
 
 import _ from 'lodash';
 
@@ -29,6 +30,8 @@ class P extends Component {
       let resp = await fetch(`${server_host}auth/login`, { body, method:'POST'});
       let json = await resp.json();
       if(json.errno == 0){
+        let result = await xgpush.setAccount('lumin824');
+        console.log(result);
         Actions.home();
       }else{
         Alert.alert(json.errmsg);

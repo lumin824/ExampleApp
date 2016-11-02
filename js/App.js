@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  NativeModules
 } from 'react-native';
 
 import { Scene, Router } from 'react-native-router-flux';
@@ -26,6 +27,7 @@ const getSceneStyle = (props, computedProps) => {
   }
   return style;
 };
+
 
 class App extends Component {
   render() {
